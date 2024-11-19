@@ -1,0 +1,4032 @@
+// TEST A B F
+// A
+// B 
+// C 
+// BACK SPACE 
+// D 
+// HISTORY BACK 
+// F 
+// HISTORY BACK (B) 
+// FORWARD (F)
+import
+*
+as
+ICON
+from
+'../ICON/index'
+import
+{
+WRITEFILEASYNC 
+as 
+WRITEFILE
+,
+READFILEASYNC 
+as 
+READFILE
+,
+CACHEDIRECTORY
+as
+PATHCACHE
+}
+from
+'expo-file-system'
+import
+{
+USELOCALSEARCHPARAMS
+}
+from
+'expo-router'
+import
+{
+USEEFFECT
+,
+USEREF
+,
+USESTATE
+,
+CREATEELEMENT
+}
+from
+'react'
+import
+{
+ANIMATED
+,
+APPSTATE
+,
+BACKHANDLER
+,
+PIXELRATIO
+,
+PRESSABLE
+,
+IMAGE
+as
+NRIMAGE
+,
+SCROLLVIEW
+,
+STATUSBAR
+,
+STYLESHEET
+,
+TEXT
+,
+VIEW
+}
+from
+'react-native'
+import 
+CANVAS
+from 
+'react-native-canvas'
+// 'BRUSH'
+// 'MOREHORIZ'
+// 'LAYER'
+// 'SHARE'
+var
+PROMISE
+=
+Promise
+// ELE
+// :
+// HTMLCANVASELE
+// CONTEXT2D
+// :
+// CANVASERINGCONTEXT2D
+// var
+// LE
+// =
+// {
+// 
+// }
+// WRITEFILEASYNC
+// (
+// DOCUMENTDIRECTORY
+// +
+// 'F1'
+// +
+// '/'
+// +
+// DAT
+// [
+// '001'
+// ]
+// ,
+// JSON
+// .
+// stringify
+// (
+// DAT
+// [
+// '002'
+// ]
+// )
+// )
+// STYLESHEET
+// .
+// CREATE
+// (
+// {
+// }
+// )
+/* // HANDLER 1 HELP ADD EVENT LISTENER 5001
+LE
+[
+'5001'
+]
+=
+(
+PA // ADD
+)
+=>
+{
+BACKHANDLER
+.
+ADDEVENTLISTENER 
+(
+'HARDWAREBACKPRESS'
+,
+PA
+)
+}
+// HANDLER 1 HELP REMOVE EVENT LISTENER 5002
+LE
+[
+'5002'
+]
+=
+(
+PA // REMOVE
+)
+=>
+{
+BACKHANDLER
+.
+REMOVEEVENTLISTENER
+(
+'HARDWAREBACKPRESS'
+,
+PA
+)
+}
+// HANDLER 1 HELP REMOVE EVENT LISTENER AND ADD EVENT LISTENER 5003
+LE
+[
+'5003'
+]
+=
+(
+PA1 // REMOVE
+,
+PA2 // ADD
+)
+=>
+{
+BACKHANDLER
+.
+REMOVEEVENTLISTENER
+(
+'HARDWAREBACKPRESS'
+,
+PA1
+)
+BACKHANDLER
+.
+ADDEVENTLISTENER 
+(
+'HARDWAREBACKPRESS'
+,
+PA2
+)
+}
+// HANDLER 1 HELP FORCE EXIT 5004
+LE
+[
+'5004'
+]
+=
+(
+
+)
+=>
+{
+NAVIATE
+.
+POP
+(
+
+)
+}
+// HANDLER 1 CLOSE 5011
+// CALL HELP 5003 (THIS, 5012) -> CALL HELP 5002 (5012)
+// RETURN 1
+LE
+[
+'5011'
+]
+=
+(
+
+)
+=>
+{
+LE
+[
+'5003'
+]
+(
+THIS
+,
+LE
+[
+'5012'
+]
+)
+CLOSE
+(
+
+)
+.
+THEN
+(
+(
+
+)
+=>
+{
+LE
+[
+'5002'
+]
+(
+LE
+[
+'5012'
+]
+)
+}
+)
+return 1  
+}
+// HANDLER 1 WAIT 5012
+// RETURN 1
+LE
+[
+'5012'
+]
+=
+(
+
+)
+=>
+{
+return 1
+}
+// HANDLER 1 STORE 5013
+// CALL HELP 5003 (THIS, 5012) -> CALL HELP 5002 (5012) -> CALL 5004
+// RETURN 1
+LE
+[
+'5013'
+]
+=
+(
+
+)
+=>
+{
+LE
+[
+'5003'
+]
+(
+THIS
+,
+LE
+[
+'5012'
+]
+)
+STORE
+(
+
+)
+.
+THEN
+(
+(
+
+)
+=>
+{
+LE
+[
+'5002'
+]
+(
+LE
+[
+'5012'
+]
+)
+LE
+[
+'5004'
+]
+(
+
+)
+}
+)
+return 1
+} */
+// % RATIO 
+// E CENT
+var 
+COMPONENT
+=
+{
+'UNDEFINED001'
+:
+{
+'9503031124034'
+:
+{ 
+'001'
+:
+undefined
+,
+'002'
+:
+undefined
+,
+'003'
+:
+undefined
+,
+'004'
+:
+undefined
+,
+'005'
+:
+undefined
+,
+'006'
+:
+undefined
+,
+'007'
+:
+undefined
+,
+'008'
+:
+undefined
+,
+'009'
+:
+undefined
+,
+'010'
+:
+undefined
+}
+}
+}
+export
+default
+COMPONENT
+[
+'UNDEFINED001'
+]
+[
+'9503031124034'
+]
+[
+'001'
+]
+=
+(
+
+)
+=>
+{
+var
+Y
+, 
+X
+, 
+W
+, 
+V
+Y
+=
+USELOCALSEARCHPARAMS
+(
+
+)
+W
+= 
+USEREF 
+(
+APPSTATE
+.
+CURRENTSTATE
+)
+V
+=
+STATE
+(
+
+)
+USEEFFECT
+(
+(
+
+)
+=> 
+{
+X
+=
+READFILE 
+(
+Y
+.
+ID
+)
+.
+then
+(
+(
+
+)
+=>
+{
+X
+&&
+V
+[
+1
+]
+(
+JSON
+.
+parse
+(
+X
+)
+)
+}
+)
+}
+,
+[
+
+]
+)
+return CREATEELEMENT
+(
+VIEW
+,
+{
+STYLE
+:
+{
+DISPLAY
+: 
+'FLEX'
+,
+FLEXDIRECTION
+: 
+'COLUMN'
+,
+HEIGHT
+: 
+'100%'
+,
+JUSTIFYCONTENT
+: 
+'FLEX-START'
+,
+POSITION
+: 
+'RELATIVE'
+,
+WIDTH
+: 
+'100%'
+}
+}
+,
+undefined 
+==
+DAT
+?
+CREATEELEMENT
+(
+VIEW
+)
+:
+CREATEELEMENT
+(
+CREATEELEMENT // DISTRIBUTION (STRING AND ICON AND OUTLINE)
+// DISPENSATION
+(
+VIEW
+,
+{
+STYLE
+:
+{
+WIDTH
+: 
+'100%'
+,
+HEIGHT
+: 
+'100%'
+,
+}
+}
+,
+CREATEELEMENT
+(
+COMPONENT
+.
+UNDEFINED001
+[
+'9503031124034'
+]
+[
+'003'
+]
+)
+)
+)
+)
+}
+COMPONENT
+.
+UNDEFINED001
+[
+'9503031124034'
+]
+[
+'002'
+]
+=
+(
+
+)
+=>
+{
+return 
+}
+COMPONENT
+[
+'UNDEFINED001'
+]
+[
+'9503031124034'
+]
+[
+'003'
+]
+=
+(
+
+)
+=>
+{
+return CREATEELEMENT
+(
+VIEW
+,
+{
+ONLAYOUT
+:
+(
+PA
+) 
+=> 
+{
+STYLE
+:
+{
+POSITION
+: 
+"RELATIVE"
+}
+}
+}
+,
+)
+}
+function COMPONENT2 (PROP1: {
+}) 
+{
+.REF['002'] = USEREF ()
+.['002'] = .USE001 ()
+USEEFFECT (() => {
+.OP['002'].TOP1 = 0
+.OP['002'].BOTTOM1 = 0
+.OP['002'].LEFT1 = 0
+.OP['002'].RIGHT1 = 0
+}, [])
+USEEFFECT (() => {
+;(ASYNC () => {
+TRY {
+var PromiseS = []
+(var NUM001 = 0; NUM001 < OB001.INS002.DATA001.GROUPS1.length; NUM001 += 1) 
+{
+var GROUP1 = OB001.INS002.DATA001.GROUPS1.AT (NUM001);
+(var NUM2 = 0; NUM2 < GROUP1.LAYERRS1.length; NUM2 += 1) 
+{
+var LAYERR1 = GROUP1.LAYERRS1.AT (NUM2)
+&& 
+(LAYERR1.OP['001'].INDEX1 >= 0 && LAYERR1.OP['001'].INDEX1 <= LAYERR1.HISTORIES1.length - 1) 
+{
+PromiseS.push 
+(OB001.INS002.LOAD1 (NUM001, NUM2, LAYERR1.OP['001'].INDEX1))
+}
+}
+}
+await PROMISE.ALL (PromiseS)
+} 
+CATCH 
+(
+ERROR
+) 
+{
+CONSOLE
+.
+ERROR 
+(
+ERROR
+)
+} 
+FINALLY 
+{
+}
+.
+
+[
+'002'
+] 
+(
+)
+}
+)
+(
+)
+}
+, 
+[
+OB001
+.
+INS002
+.
+DATA001
+]
+)
+{
+!!CONTAINER1.MANAGER1.DATA && 
+CONTAINER1.MANAGER1.DATA.GROUPS1.map ((GROUP, INDEX1) => {
+return GROUP.LAYERRS.map ((LAYER, INDEX2) => {
+// MERGE TO new IMAGE
+var IMAGE = MANAGER1.GETGROUPS1INLAYERROFIMAGE (LAYER)
+&& 
+(!!IMAGE) 
+{
+return `<IMG ID="IMAGE_{INDEX1}_{INDEX2}" STYLE="LEFT: 0; TOP: 0; POINTER-EVENT1S: NONE; WIDTH: {IMAGE.L.WI}PX; HEIGHT: {IMAGE.L.HE}PX;" SRC="{IMAGE.FILE1.CONTENT}" />`
+}  {
+return ``
+}
+})
+}) 
+}
+{
+!!CONTAINER1.MANAGER1.DATA &&
+(
+(() => {
+var GROUP1 = CONTAINER1.MANAGER1.GETCURRENTGROUP1 ()
+var INDEX1 = CONTAINER1.MANAGER1.DATA.NU['001']
+var INDEX2 = GROUP1.OPTION.NUM001
+console.log ("#112", INDEX1, INDEX2)
+var IMAGE1 = CONTAINER1.MANAGER1.GETCURRENTGROUPS1INLAYERROFIMAGE ()
+&& 
+(!!IMAGE1) 
+{
+return (
+`BECTOR`
+)
+}  {
+return ``
+}
+})()
+)
+}
+{
+!!CONTAINER1.INS002.DATA001 && 
+CONTAINER1.INS002.DATA001.GROUPS1.map ((GROUP1, INDEX1) => {
+return GROUP1.LAYERRS1.map ((LAYERR1, INDEX2) => {
+&& 
+(!!LAYERR1.IMAGE1) 
+{
+console.log (`IMAGE_{INDEX1}_{INDEX2}`, LAYERR1.IMAGE1.FILE1.STR['001'])
+return `<IMG ID="IMAGE_{INDEX1}" STYLE="OPACITY: 1; POSITION: ; LEFT: {LAYERR1.IMAGE1.OP['001'].L['001'].X1}; TOP: {LAYERR1.IMAGE1.OP['001'].L['001'].Y1}; POINTER-EVENT1S: NONE; WIDTH: {LAYERR1.IMAGE1.OP['001'].L['001'].WI1}PX; HEIGHT: {LAYERR1.IMAGE1.OP['001'].L['001'].HE001}PX; MARGIN: 0; RC="{LAYERR1.IMAGE1.FILE1.CONTENT1}" />`
+}  {
+return ``
+}
+})
+})
+}
+return (
+<VIEW
+ONLAYOUT = 
+{ 
+(EVENT1) => {
+.SET001 (OB.LAY['002'], EVENT1.NATIVEEVENT.L)
+.['002'] ()
+} 
+}  
+REF = 
+{ .REF['002'] }
+STYLE = 
+{ 
+{
+POSITION: "RELATIVE",
+WIDTH: "100%",
+HEIGHT: "100%",
+} 
+}
+>
+useEffect
+(
+(
+
+) 
+=> 
+{
+if 
+(
+ref
+.
+current
+) 
+{
+const 
+ctx 
+= 
+ref
+.
+current
+.
+getContext
+(
+'2d'
+)
+ctx
+.
+fillStyle 
+= 
+'red'
+ctx
+.
+fillRect
+(
+20
+, 
+20
+, 
+100
+, 
+100
+)
+}
+}
+, 
+[
+ref
+]
+)
+
+return CREATEELEMENT
+(
+CANVAS
+,
+{
+REF
+=
+{
+
+}
+STYLE
+:
+{ 
+width
+: 
+'100%'
+, 
+height
+: 
+'100%'
+, 
+backgroundColor
+: 
+'black' 
+}
+}
+)
+
+<WEBVIEW
+JAVASCRIPTENABLADD
+STYLE = 
+{ 
+{
+WIDTH: "100%",
+HEIGHT: "100%",
+} 
+}
+OVERSCROLLMODE="NEVER"
+SOURCE = 
+{ 
+{ 
+HTML: `
+<HTML STYLE="MARGIN: 0; DTH: 100%; HEIGHT: 100%; OVERFLOW-X: HIDDEN; OVERFLOW-Y: HIDDEN;">
+<HEAD>
+<META NAME="VIEWPORT" CONTENT="WI=DEVICE-WI, MINIMUM-SCALE=1.0, INITIAL-SCALE=1.0, MAXIMUM-SCALE=1.0, USER-SCALABLE=NO">
+</HEAD>
+<BODY
+STYLE="
+MARGIN: 0; 
+
+WIDTH: 100%; 
+HEIGHT: 100%;
+"
+>
+<DIV
+STYLE
+:
+{
+POSITION: RELATIVE;
+MARGIN: 0;
+;
+: 0;
+0;
+ 0;
+WIDTH: 100%;
+HEIGHT: 100%;
+}
+>
+<DIV
+STYLE="
+POSITION: ;
+TOP: {.OP['002'].TOP1}PX;
+LEFT: {.OP['002'].LEFT1}PX;
+WIDTH: 100%;
+HEIGHT: 100%;
+MARGIN: 0;
+
+POINTER-EVENTS: NONE;
+// BORDER: 3PX SOLID #3D3;
+// BOX-SIZING: BORDER-BOX;
+// BACKGROUND-COLOR: RGBA (233, 22, 233, 1);
+"
+>
+<DIV
+STYLE
+:
+{
+POSITION: 'RELATIVE';
+WIDTH: 100%;
+HEIGHT: 100%;
+MARGIN: 0;
+
+}
+>
+}
+`
++
+`
+{
+STR1 
+=
+STR1
++
+`
+<IMG
+ID
+=
+'IMAGE_{I1}'
+STYLE
+=
+'
+POSITION
+:
+FIXED;
+BORDER: 3PX SOLID #DDD;
+'
+SRC
+=
+'{CONTENT1}' 
+/>
+`
+return STR1
+}
+`
++
+`
+</DIV>
+</DIV>
+<DIV
+STYLE="
+POSITION: ;
+TOP: {TOP1};
+LEFT: {LEFT1};
+WIDTH: 100%;
+HEIGHT: 100%;
+MARGIN: 0;
+
+OVERFLOW-X: HIDDEN;
+OVERFLOW-Y: HIDDEN;
+// BORDER: 3PX SOLID #D33;
+BOX-SIZING: BORDER-BOX;
+// BACKGROUND-COLOR: RGBA (111, 233, 233, 0.5);
+"
+>
+<CANVAS 
+ID="CANVAS1"
+STYLE="
+MARGIN: 0;
+
+BACKGROUND-COLOR: RGBA (111, 233, 233, 1);
+"
+>
+</CANVAS>
+</DIV>
+</DIV>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+{ 
+(
+[DUM.I['021'], DUM.I['022'], OB001.INS002.GET2 (DUM.I['021'], DUM.I['022']).OP['001'].I1] //  WILL RUN HTML AND INJECTADDJAVASCRIPT
+)
+}
+</SCRIPT>
+</BODY>
+</HTML>
+`,
+}
+}
+INJECTADDJAVASCRIPT = 
+{
+`
+TRY 
+{
+WINDOW
+.
+REACTNATIVEWEBVIEW
+.
+POSTMESSAGE
+(
+JSON
+.
+STRINGIFY
+(
+{
+MESSAGE1
+:
+'INJECTADDJAVASCRIPT'
+}
+)
+)
+var
+EL1
+=
+document
+.
+getElementById
+(
+'DIV2'
+)
+var
+EL2
+=
+document
+.
+getElementById
+(
+'CANVAS1'
+)
+var
+CTX1
+=
+EL2
+.
+getContext
+(
+'2D'
+)
+var 
+H1 
+=  
+{
+(
+(
+
+)
+=> 
+{
+var 
+B
+&& 
+(
+(
+(
+undefined 
+==
+OB
+.
+[
+'002'
+]
+.
+HE1
+)
+)
+)
+{
+B 
+= 
+0 
+}
+
+{
+B
+=
+.
+L
+[
+'002'
+]
+.
+HE1
+}
+return B
+}
+)
++
+`
+var 
+W1 
+=  
+{
+(
+(
+)
+=> 
+{
+var
+B
+&&
+(
+(
+(
+undefined 
+== 
+.
+L
+[
+'002'
+]
+.
+WI1
+)
+)
+)
+{
+B 
+= 
+0 
+}
+
+{
+B 
+= 
+OB
+.
+LAY
+[
+'002'
+]
+.
+WI1
+}
+return B
+}
+)
+}
+
+EL2.height = H1
+EL2.width = W1
+
+var LW1 = {.OP['001'].WI1}
+var SS1 = "{.OP['001'].COLOR1}"
+
+CTX1.lineWidth = LW1
+CTX1.strokeStyle = SS1
+
+`
++
+(
+(
+
+)
+=> 
+{
+var 
+GROUP1 
+= 
+OB001
+.
+INS002
+.
+GET1 
+(
+DUM
+.
+INDEX
+[
+'021'
+]
+)
+var 
+LAYERR1 
+= 
+OB001
+.
+INS002
+.
+GET2 
+(
+DUM
+.
+INDEX
+[
+'021'
+]
+, 
+DUM
+.
+INDEX
+[
+'022'
+]
+)
+var
+A
+=
+``
+&&
+(
+undefined
+==
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+FILE1
+.
+CONTENT1
+)
+{
+A 
+= 
+``
+}
+
+{
+A 
+=
+`
+var 
+IMAGE1 
+= 
+document
+.
+getElementById 
+(
+'IMAGE_`
++
+DUM
+.
+INDEX
+[
+'021'
+]
++
+'_'
++
+DUM
+.
+INDEX
+[
+'022'
+]
++
+`'
+)
+/* 
+CTX1
+.
+CLEARRECT 
+(
+`
++
+
+.
+L
+[
+'002'
+]
+.
+X1
+`
+,
+`
++ 
+OB
+
+.
+L
+[
+'002'
+]
+.
+Y1
++
+`
+,
+`
++ 
+
+.
+L
+[
+'002'
+]
+.
+WI1
++
+`
+,
+`
++ 
+
+.
+L
+[
+'002'
+]
+.
+HE1
++
+`
+)
+*/
+CTX1
+.
+DRAWIMAGE 
+(
+IMAGE1
+,
+`
++
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+X1
++
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+Y1
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+WI1
++
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+HE001
++
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+X1
++
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+Y1
++
+`
+,
+` 
++
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+WI1
+`
+,
+`
++ 
+LAYERR1
+.
+DUMMY001
+.
+HISTORY1
+.
+IMAGE1
+.
+OP['001']
+.
+L
+[
+'001'
+]
+.
+HE001
++
+`
+)
+}
+return A 
+}
+)
+(
+
+)
+}
+EL1.ADDEVENTLISTENER ("TOUCHSTART", (EVENT11) => {
+CTX1.BEGINPATH ()
+CTX1.MOVETO (EVENT11.TOUCHES[0].SCREENX - {.OP['002'].LEFT1}, EVENT11.TOUCHES[0].SCREENY - {.OP['002'].TOP1} - {STATUSBAR.CURRENTHE})
+})
+EL1.ADDEVENTLISTENER ("TOUCHMOVE", (EVENT11) => {
+// CTX1.lineWidth = ({.OP['001'].WI1} * EVENT11.TOUCHES[0].FORCE)
+TRY {
+CTX1.LINETO (EVENT11.TOUCHES[0].SCREENX - {.OP['002'].LEFT1}, EVENT11.TOUCHES[0].SCREENY - {.OP['002'].TOP1} - {STATUSBAR.CURRENTHE})
+CTX1.STROKE ()
+WINDOW.REACTNATIVEWEBVIEW.POSTMESSAGE (JSON.STRINGIFY ({
+MESSAGE1: "TOUCHMOVE"
+}))
+} CATCH (ERROR) 
+{
+WINDOW.REACTNATIVEWEBVIEW.POSTMESSAGE (JSON.STRINGIFY ({
+MESSAGE1: ERROR.MESSAGE
+}))
+}
+})
+EL1.ADDEVENTLISTENER ("TOUCHEND", (EVENT11) => {
+CTX1.CLOSEPATH ()
+WINDOW.REACTNATIVEWEBVIEW.POSTMESSAGE (JSON.STRINGIFY ({
+MESSAGE1: "{ENUM2.TO DAT URL}",
+TEXT1: EL2.TODATAURL (),
+}))
+})
+} CATCH (ERROR) 
+{
+WINDOW.REACTNATIVEWEBVIEW.POSTMESSAGE (JSON.STRINGIFY ({
+MESSAGE1: ERROR.MESSAGE
+}))
+}
+`
+}
+ONMESSAGE = 
+{ ASYNC (EVENT1) => {
+TRY {
+&& 
+(EVENT1.NATIVEEVENT.DATA 
+== "undefined") 
+{
+CONSOLE.WARN ("EVENT1.NATIVEEVENT.DATA IS undefined")
+return
+}
+var DATA: 
+{
+MESSAGE1: string
+TEXT1: string
+} 
+= JSON.PARSE (EVENT1.NATIVEEVENT.DATA)
+
+&& 
+(!DATA.MESSAGE1) 
+{
+CONSOLE.WARN ("DATA.MESSAGE IS " + DATA.MESSAGE1)
+return
+}
+
+&& 
+(ENUM2[DATA.MESSAGE1] 
+== "TODATAURL") 
+{
+var STR['001'] = F1.GETSUNIQUEID ()
+var CONTENT1 = DATA.TEXT1
+
+await F2.CLASS4.WRITEFILEASYNC (STR['001'], CONTENT1)
+
+var HISTORY1: TYPE18 = undefined
+&& 
+(!HISTORY1) 
+{
+HISTORY1 = 
+{}
+}
+&& 
+(!HISTORY1.IMAGE1) 
+{
+HISTORY1.IMAGE1 = 
+{}
+}
+&& 
+(!HISTORY1.IMAGE1.FILE1) 
+{
+HISTORY1.IMAGE1.FILE1 = 
+{}
+}
+&& 
+(!HISTORY1.IMAGE1.FILE1.STR['001']) 
+{
+HISTORY1.IMAGE1.FILE1.STR['001'] = STR['001']
+}
+&& 
+(!HISTORY1.IMAGE1.OP['001']) 
+{
+HISTORY1.IMAGE1.OP['001'] = 
+{}
+}
+&& 
+(!HISTORY1.IMAGE1.OP['001'].L['001']) 
+{
+HISTORY1.IMAGE1.OP['001'].L['001'] = 
+{}
+.SET2 (HISTORY1.IMAGE1.OP['001'].L['001'], OB.LAY['002'])
+}
+OB001.INS002.ADD3 (DUM.INDEX['021'], DUM.INDEX['022'], HISTORY1)
+
+var LAYERR1 = OB001.INS002.GET2 (DUM.INDEX['021'], DUM.INDEX['022'])
+var POS1 = DUM.INDEX['021']
+var POS2 = DUM.INDEX['022']
+DUM.INDEX['001'] = POS1
+DUM.INDEX['002'] = POS2
+LAYERR1.DUMMY001.['022'] ()
+
+return
+}
+
+console.log ("POST MESSAGE:", DATA.MESSAGE1)
+} CATCH (ERROR) 
+{
+CONSOLE.ERROR (ERROR)
+}
+} }
+/>
+</VIEW>
+)
+}
+function COMPONENT3 (PROP1: { 
+}) 
+{
+// CHANGADD: CURRENT -> TOP BUT['001']. BOTTOM Tabs1.
+.REF['003'] = USEREF ()
+.['003'] = .USE001 ()
+return (
+<ANIMATADD.VIEW
+ONLAYOUT = 
+{ 
+(EVENT1) => {
+.SET001 (OB.LAY['003'], EVENT1.NATIVEEVENT.L)
+.['002'] ()
+} 
+}
+REF = 
+{ .REF['003'] }
+STYLE = 
+{ 
+{
+POSITION: "",
+WIDTH: "100%",
+HEIGHT: OB.LAY['004'].HE1,
+BOTTOM: .INS002,
+POINTEREVENTS: "AUTO",
+} 
+}
+>
+<VIEW
+STYLE = 
+{ 
+{
+DISPLAY: "FLEX",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+WIDTH: "100%",
+HEIGHT: "100%",
+BACKGROUNDCOLOR: "RGBA (252, 252, 252, 1)",
+} 
+}
+>
+<COMPONENT4></COMPONENT4>
+<COMPONENT8></COMPONENT8>
+</VIEW>
+</ANIMATADD.VIEW>
+)
+}
+function COMPONENT4 (PROP1: {
+}) 
+{
+.REF['004'] = USEREF ()
+.['004'] = .USE001 ()
+return (
+<VIEW
+ONLAYOUT = 
+{ 
+(EVENT1) => {
+.SET001 (OB.LAY['004'], EVENT1.NATIVEEVENT.L)
+.['003'] ()
+}
+}
+REF = 
+{ .REF['004'] }
+STYLE = 
+{ 
+{
+WIDTH: "100%",
+}
+}
+>
+<SCROLLVIEW
+HORIZONTAL = 
+{ true }
+SHOWSHORIZONTALSCROLLINDICATOR = 
+{ false }
+STYLE = 
+{ 
+{
+WIDTH: "100%",
+}
+}
+CONTENTCONTAINERSTYLE = 
+{ 
+{
+ALIGNITEMS: "CENTER",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "FLEX-START",
+HEIGHT: .HE002,
+}
+}
+KEYBOARDSHOULDPERSISTTAPS='ALWAYS'
+>
+<COMPONENT5>
+</COMPONENT5>
+<COMPONENT7>
+</COMPONENT7>
+</SCROLLVIEW>
+</VIEW>
+)
+}
+function COMPONENT5 
+(
+PROP1
+: 
+{
+}
+) 
+{ 
+{
+ELE001 
+= 
+(
+<VIEW
+ONLAYOUT = 
+{
+(EVENT1) => {
+.SET001 (OB.LAY['005'], EVENT1.NATIVEEVENT.L)
+}
+}
+REF = 
+{ 
+.REF['005'] 
+}
+STYLE = 
+{
+{
+
+}
+}
+>
+{
+.BUT['001'].map ((BUTTON1, NUM001) => {
+return (
+<COMPONENT6
+BUTTON1 = 
+{ 
+BUTTON1 
+}
+KEY = 
+{ 
+NUM001 
+}
+>
+</COMPONENT6>
+)
+})
+}
+</VIEW>
+) 
+}
+return .ELE001
+}
+function COMPONENT6 (PROP1: {
+BUTTON1: TYPE26
+}) 
+{
+.REF['006'] = undefined
+.['006'] = undefined
+PROP1.BUTTON1.REF1 = USEREF ()
+PROP1.BUTTON1.1 = .USE001 ()
+&& 
+(
+(!PROP1.BUTTON1.ELE001)
+)
+{
+PROP1.BUTTON1.REF1 = undefined
+PROP1.BUTTON1.REF1 = USEREF ()
+PROP1.BUTTON1.ELE001 = (
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1
+) 
+=> 
+{
+OB.LAY['006'] = undefined
+.SET001 (PROP1.BUTTON1.L1, EVENT1.NATIVEEVENT.L)
+}
+}
+REF = 
+{ 
+PROP1.BUTTON1.REF1 
+}
+STYLE = 
+{ 
+STYLES1.OB001 
+}
+>
+<PRESSABLE
+STYLE = 
+{
+.STR['001'] 
+== PROP1.BUTTON1.NAME1 ? 
+STYLESHEET.COMPONENTOSE (STYLES1.OBJ3, STYLES1.OBJ4)
+:
+STYLES1.OBJ3 
+}
+ONPRESS = 
+{ 
+(
+EVENT1
+) 
+=> 
+{
+&& 
+(
+.STR['001'] 
+== 
+"NONE"
+) 
+{
+.STR['001'] 
+= 
+PROP1.BUTTON1.NAME1
+var BUTTON1 
+= 
+.GETCURRENTBUTTON001 
+(
+
+)
+.['007'] 
+(
+
+)
+BUTTON1.1 
+(
+
+)
+.['008'] 
+(
+
+)
+} 
+
+{
+&& 
+(
+(
+(
+.STR['001'] 
+== 
+PROP1.BUTTON1.NAME1
+)
+)
+) 
+{
+
+}
+
+{
+var BUTTON1 
+= 
+.GETCURRENTBUTTON001 
+(
+
+)
+.STR['001'] 
+= 
+PROP1.BUTTON1.NAME1
+var BUTTON2 
+= 
+.GETCURRENTBUTTON001 
+(
+
+)
+.MOVE001 
+(
+
+)
+BUTTON1.1 
+(
+
+)
+BUTTON2.1 
+(
+
+)
+.['008'] 
+(
+
+)
+}
+}
+&& 
+(!.BOOL002) 
+{
+setTimeout (() => {
+.OPEN001 ()
+}, 0)
+}
+} 
+}
+>
+<FONTAWESOMEIKON SIZE = 
+{ 34 } COLOR = 
+{ STYLES1.OBJ23A3.COLOR } IKON = 
+{ PROP1.BUTTON1.ICON1 }></FONTAWESOMEIKON>
+</PRESSABLE>
+</VIEW>
+)
+}
+return PROP1.BUTTON1.ELE001
+}
+function 
+COMPONENT7 
+(
+PROP2
+:
+{ 
+}
+) 
+{
+
+.
+REF['007'] 
+= 
+USEREF 
+(
+
+)
+
+.
+['007'] 
+= 
+
+.
+USE001 
+(
+
+)
+return (
+<ANIMATADD.VIEW
+ONLAYOUT 
+= 
+{
+(
+EVENT1
+) 
+=> 
+{
+
+.
+SET001 
+(
+
+.
+L['007']
+, 
+EVENT1
+.
+NATIVEEVENT
+.
+L
+)
+}
+}
+REF = 
+{ 
+.REF['007'] 
+}
+STYLE = 
+{
+{
+POSITION: "",
+WIDTH: .WI002,
+LEFT: .INS003,
+BOTTOM: 0,
+POINTEREVENTS: "AUTO",
+} 
+}
+>
+{
+.STR['001'] 
+== 
+"NONE" 
+?
+(
+<VIEW>
+</VIEW>
+)
+:
+(
+<VIEW
+STYLE = 
+{ 
+{
+BORDERBOTTOMWI: 3,
+BORDERBOTTOMCOLOR: "RGBA (255, 50, 50, 0.5)",
+BORDERRADIUS: 8,
+} 
+}
+>
+</VIEW>
+)
+}
+</ANIMATADD.VIEW>
+)
+}
+function 
+COMPONENT8 
+(
+PROP1
+?
+: 
+{
+}
+) 
+{
+
+.
+REF['008'] 
+= 
+USEREF 
+(
+
+)
+
+.
+['008'] 
+= 
+
+.
+USE001
+(
+
+)
+return (
+<VIEW
+ONLAYOUT 
+= 
+{
+(
+EVENT1
+) 
+=> 
+{
+.SET001 
+(
+
+.
+L['008']
+, 
+EVENT1
+.
+NATIVEEVENT
+.
+L
+,
+)
+}
+}
+REF = 
+{ 
+.REF['008']
+}
+STYLE = 
+{ 
+{
+FLEXGROW: 3,
+FLEXSHRINK: 1,
+WIDTH: "100%",
+} 
+}
+>
+{ 
+.STR['001'] 
+== "LAYER-GROUP" && (
+<COMPONENT9></COMPONENT9>
+)
+}
+{ 
+.STR['001'] 
+== "SQUARE DASH" && (
+<COMPONENT23></COMPONENT23>
+)
+}
+{ 
+.STR['001'] 
+== "MOREHORIZ" && (
+<COMPONENT025></COMPONENT025>
+)
+}
+{ 
+.STR['001'] 
+== "PAINTBRUSH-PENCIL" && (
+<COMPONENT24></COMPONENT24>
+)
+}
+</VIEW>
+)
+}
+function 
+COMPONENT9 
+(
+PROP1
+: 
+{
+
+}
+) 
+{
+.REF['009'] 
+= 
+USEREF 
+(
+
+)
+.['009'] 
+= 
+.USE001 
+(
+
+)
+return (
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1
+) 
+=> 
+{
+.SET001 
+(
+OB.LAY['009']
+, 
+EVENT1.NATIVEEVENT.L
+)
+}
+}
+REF 
+= 
+{ 
+.REF['009'] 
+}
+STYLE 
+= 
+{ 
+STYLES1.OBJ23A1 
+}
+>
+<VIEW
+STYLE = 
+{ 
+STYLES1.OBJ9 
+}
+>
+<SCROLLVIEW
+SHOWSVERTICALSCROLLINDICATOR 
+= 
+{ 
+false
+}
+STYLE 
+= 
+{
+{
+HE
+: 
+"100%"
+,
+}
+}
+CONTENTCONTAINERSTYLE = 
+{ 
+{
+}
+}
+KEYBOARDSHOULDPERSISTTAPS
+=
+'ALWAYS'
+>
+<VIEW
+STYLE 
+= 
+{
+{
+DISPREI
+: 
+'FLEX'
+,
+FLEXDIRECTION
+: 
+'COLUMN'
+,
+JUSTIFYCONTENT
+: 
+'FLEX-START'
+,
+}
+}
+>
+<PRESSABLE
+STYLE 
+= 
+{ 
+STYLES1
+.
+OBJ23A2
+}
+ONPRESS 
+= 
+{
+(
+EVENT1
+)
+=> 
+{
+console
+.
+log 
+(
+"PLUS LAYER"
+)
+var 
+INDEX1 
+= 
+OB001
+.
+INS002
+.
+DATA001
+.
+OP['002']
+.
+INDEX1
+var 
+INDEX2 
+= 
+OB001
+.
+INS002
+.
+DATA001
+.
+OP['002']
+.
+INDEX2
+var 
+INDEX3 
+= 
+OB001
+.
+INS002
+.
+DATA001
+.
+OP['002']
+.
+INDEX1 
++ 
+1
+var 
+INDEX4 
+= 
+0
+OB001
+.
+INS002
+.
+DATA001
+.
+OP['002']
+.
+INDEX1 
+= 
+INDEX3
+OB001
+.
+INS002
+.
+DATA001
+.
+OP['002']
+.
+INDEX2 
+= 
+INDEX4
+OB001
+.
+INS002
+.
+ADD1 
+(
+INDEX3
+)
+OB001
+.
+INS002
+.
+ADD2 
+(
+INDEX3
+, 
+INDEX4
+)
+DUM
+.
+INDEX
+[
+'014'
+] 
+= 
+INDEX1
+DUM
+.
+INDEX
+[
+'015'
+] 
+= 
+INDEX2
+var 
+LAYERR1 
+= 
+OB001
+.
+INS002
+.
+GET2 
+(
+INDEX1
+, 
+INDEX2
+,
+)
+LAYERR1.DUMMY001.20 
+(
+
+)
+// var LAYERR2 = OB001.INS002.GET2 (INDEX3, INDEX4)
+// LAYERR2.DUMMY001.['001'] ()
+// console.log ("ONPRESS::", "INDEX1:", INDEX1, ",INDEX2:", INDEX2)
+// DUM.INDEX['003'] = INDEX3
+// .['010'] ()
+
+// DUM.INDEX['004'] = INDEX3
+// DUM.INDEX['005'] = INDEX4
+// DUM.INDEX['016'] = INDEX3
+// DUM.INDEX['001']7 = INDEX4
+// .['012'] ()
+// .['002'] ()
+}
+}
+>
+<ICON.ADD>
+
+</ICON.ADD>
+</PRESSABLE>
+<PRESSABLE
+STYLE = 
+{ 
+STYLES1.OBJ23A2
+}
+ONPRESS = 
+{
+(
+EVENT1
+)
+=> 
+{
+var INDEX1 = DUM.INDEX['021']
+var INDEX2 = DUM.INDEX['022']
+var INDEX3 = DUM.INDEX['021']
+var INDEX4 = DUM.INDEX['022'] + 1
+OB001.INS002.ADD2 (INDEX3, INDEX4)
+DUM.INDEX['021'] = INDEX3
+DUM.INDEX['022'] = INDEX4
+DUM.INDEX['001'] = INDEX1
+DUM.INDEX['002'] = INDEX2
+var LAYERR1 = OB001.INS002.GET2 (INDEX1, INDEX2)
+LAYERR1.DUMMY001.['001'] ()
+DUM.INDEX['001'] = INDEX3
+DUM.INDEX['002'] = INDEX4
+var 
+GROUP2 
+= 
+OB001
+.
+INS002
+.
+GET1 
+(
+INDEX3
+)
+GROUP2
+.
+DUMMY001
+.
+['003'] 
+(
+
+)
+
+
+.
+['002'] 
+(
+
+)
+}
+}
+>
+<ICON.ADD>
+
+</ICON.ADD>
+</PRESSABLE>
+</VIEW>
+</SCROLLVIEW>
+</VIEW>
+<VIEW
+STYLE 
+= 
+{
+{
+FLEXGROW
+: 
+3
+,
+FLEXSHRINK
+: 
+1
+,
+HE
+: 
+"100%"
+,
+POSITION
+: 
+"RELATIVE"
+,
+}
+}
+>
+<COMPONENT10>
+
+</COMPONENT10>
+<COMPONENT11>
+
+</COMPONENT11>
+<COMPONENT12>
+
+</COMPONENT12>
+</VIEW>
+</VIEW>
+)
+}
+function COMPONENT10 
+(
+PROP1
+: 
+{
+}
+)
+{
+
+.
+REF['010'] 
+= 
+
+.
+USE001 
+(
+
+)
+
+.
+['010'] 
+= 
+
+.
+USE001 
+(
+
+)
+return (
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1
+) 
+=> 
+{
+.SET001 
+(
+OB.LAY['010']
+, 
+EVENT1.NATIVEEVENT.L
+)
+.['011'] 
+(
+
+)
+}
+}
+REF = 
+{ 
+.REF['010'] 
+}
+STYLE = 
+{ 
+{
+DISPLAY: "FLEX",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+BORDERBOTTOMWI: 1,
+BORDERCOLOR: "RGBA (245, 245, 245, 1)",
+WIDTH: "100%",
+} 
+}
+>
+<VIEW
+ONTOUCHEND = 
+{
+(EVENT1) => {
+.BOOL001 = !.BOOL001
+.['010'] ()
+.['011'] ()
+} 
+}
+STYLE = 
+{ 
+{
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "SPACE-BETWEEN",
+ALIGNITEMS: "CENTER",
+
+WIDTH: "100%",
+}
+}
+>
+<TEXT
+= 
+{ 
+"        " 
+}
+STYLE = 
+{ 
+{
+FONTWEIGHT
+: 
+"300"
+,
+FONTSIZE
+: 
+14
+,
+TEXTDECOREITIONLINE
+: 
+"LINE THROUGH"
+,
+}
+}
+>
+</TEXT>
+{ 
+OB
+.
+BO
+[
+'001'
+] 
+? 
+(
+<ICON.KEYBOARDARROWUP
+COLOR 
+= 
+{ 
+STYLES1
+.
+OBJ23A3
+.
+COLOR
+} 
+SIZE
+=
+{
+16
+}
+>
+
+</ICON.KEYBOARDARROWUP>
+) 
+:
+(
+<ICON.KEYBOARDARROWDOWN
+>
+
+</ICON.KEYBOARDARROWDOWN>
+)
+}
+</VIEW>
+</VIEW>
+)
+}
+function COMPONENT11 
+(
+PA1
+: 
+{
+
+}
+) 
+{
+
+.
+REF['011'] 
+= 
+USEREF 
+(
+
+)
+
+.
+['011'] 
+= 
+
+.
+USE001 
+(
+
+)
+return (
+<VIEW
+ONLAYOUT 
+= 
+{
+(
+EVENT1
+) 
+=> 
+{
+
+.
+SET001 
+(
+
+.
+L['011']
+, 
+EVENT1
+.
+NATIVEEVENT
+.
+L
+)
+}
+}
+REF = 
+{
+.REF['011']
+}
+STYLE = 
+{
+{
+POSITION: "",
+TOP: OB.LAY['010'].HE1,
+LEFT: 0,
+DISPLAY: .BOOL001 ? "FLEX" : "NONE",
+WIDTH: "100%",
+BORDERBOTTOMWI: 1,
+BORDERCOLOR: "RGBA (245, 245, 245, 1)",
+MAXHE: 36 * 8,
+ZINDEX: 9,
+}
+}
+>
+<SCROLLVIEW
+SCROLLENABLADD = 
+{ 
+true 
+}
+SHOWSVERTICALSCROLLINDICATOR = 
+{ 
+false 
+}
+STYLE = 
+{ 
+{
+WIDTH: "100%",
+HEIGHT: "100%",
+}
+}
+CONTENTCONTAINERSTYLE = 
+{ 
+{
+WIDTH: "100%",
+}
+}
+>
+<VIEW
+STYLE = 
+{
+{
+WIDTH: "100%",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+BACKGROUNDCOLOR: "RGBA (255, 255, 255, 1)",
+}
+}
+>
+{
+OB001.INS002.DATA001.GROUPS1.map ((GROUP1, INDEX1) => {
+console.log ("COMPONENT10::GROUPS1.map::INDEX1:", INDEX1)
+return (
+<COMPONENT13
+INDEX1 = 
+{ 
+INDEX1 
+}
+KEY = 
+{ 
+GROUP1.ID001 
+}
+>
+</COMPONENT13>
+)
+})
+}
+</VIEW>
+</SCROLLVIEW>
+</VIEW>
+)
+}
+function COMPONENT12 (PROP1: {
+}) 
+{
+.REF['012'] = USEREF ()
+.['012'] = .USE001 ()
+return (
+<SCROLLVIEW
+ONLAYOUT = 
+{
+(EVENT1) => {
+.SET001 (OB.LAY['012'], EVENT1.NATIVEEVENT.L)
+}
+}
+CONTENTCONTAINERSTYLE = 
+{ 
+{
+}
+}
+KEYBOARDSHOULDPERSISTTAPS="ALWAYS"
+REF = 
+{ 
+.REF['012'] 
+}
+SHOWSVERTICALSCROLLINDICATOR = 
+{ 
+false 
+}
+STYLE = 
+{ 
+{
+POSITION: "RELATIVE",
+HEIGHT: "100%",
+}
+}
+>
+<VIEW
+STYLE = 
+{ 
+{
+DISPLAY: "FLEX",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+MINHE: "100%",
+} 
+}
+>
+<COMPONENT14></COMPONENT14>
+</VIEW>
+</SCROLLVIEW>
+)
+}
+function COMPONENT13 (PROP1: {
+INDEX1: number
+}) 
+{
+.REF['013'] = undefined
+.['013'] = undefined
+var GROUP1 = OB001.INS002.GET1 (PROP1.INDEX1)
+GROUP1.DUMMY001.REF1 = USEREF ()
+GROUP1.DUMMY001.['001'] = .USE001 ()
+&& 
+(
+(PROP1.INDEX1 
+== DUM.INDEX['001']) 
+|| (
+undefined 
+== GROUP1.DUMMY001.ELE003)
+) 
+{
+GROUP1.DUMMY001.ELE003 = (
+<VIEW
+ONLAYOUT = 
+{
+(EVENT1) => {
+.SET001 (OB.LAY['013'], EVENT1.NATIVEEVENT.L)
+&& 
+(
+(PROP1.INDEX1 
+== DUM.INDEX['001'])
+) 
+{
+DUM.INDEX['001'] = -1
+}
+}
+}
+REF = 
+{ 
+GROUP1.DUMMY001.REF1 
+}
+STYLE = 
+{
+{
+ALIGNITEMS: "CENTER",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "SPACE-BETWEEN",
+
+WIDTH: "100%",
+}
+}
+>
+<TEXT 
+STYLE = 
+{ 
+{
+FONTSIZE: 14,
+FONTWEIGHT: "300",
+}
+}
+>
+{ 
+GROUP1.STR['001'] 
+}
+</TEXT>
+<CHECKBOX
+COLOR = 
+{ 
+"RGBA (240, 240, 240, 1)" 
+}
+ONVALUECHANGE = 
+{ 
+(
+VALUE,
+) => 
+{
+GROUP1.OP['001'].CHECK001 = VALUE
+GROUP1.DUMMY001.['001'] 
+(
+
+)
+.['002'] 
+(
+
+)
+.['014'] 
+(
+
+)
+}
+}
+STYLE = 
+{ 
+{
+
+} 
+}
+VALUE = 
+{ 
+GROUP1.OP['001'].CHECK001 
+}
+>
+</CHECKBOX>
+</VIEW>
+)  
+}
+return GROUP1.DUMMY001.ELE003
+}
+function COMPONENT14 (PROP2: {
+}) 
+{
+.REF['014'] = USEREF ()
+.['014'] = .USE001 ()
+return (
+<VIEW
+ONLAYOUT = 
+{
+(EVENT1) => {
+.SET001 (OB.LAY['014'], EVENT1.NATIVEEVENT.L)
+}
+}
+REF = 
+{ 
+.REF['014'] 
+}
+STYLE = 
+{
+{
+ALIGNITEMS: "FLEX-START",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+WIDTH: "100%",
+}
+}
+>
+{
+(
+(
+
+) => 
+{
+return OB001.INS002.DATA001.GROUPS1
+.filter ((GROUP1) => GROUP1.OP['001'].CHECK001)
+.map 
+(
+(
+GROUP1, 
+INDEX1,
+) => 
+{
+&& 
+(
+(
+(
+undefined 
+== GROUP1.DUMMY001.ELE14A1
+)
+)
+) 
+{
+GROUP1.DUMMY001.ELE14A1 = 
+(
+<COMPONENT15
+INDEX1 = 
+{ 
+INDEX1 
+}
+KEY = 
+{ 
+GROUP1.ID001 
+}
+>
+</COMPONENT15>
+)
+}
+return GROUP1.DUMMY001.ELE14A1
+}
+)
+}
+)
+(
+
+)
+}
+</VIEW>
+)
+}
+function COMPONENT15 (PROP1: {
+INDEX1: number
+}) 
+{
+.REF['015'] = undefined
+.['015'] = undefined
+var GROUP1 = OB001.INS002.GET1 (PROP1.INDEX1)
+GROUP1.DUMMY001.['002'] = .USE001 ()
+&& 
+(
+(PROP1.INDEX1 
+== DUM.INDEX['001']) 
+|| (!GROUP1.DUMMY001.ELE001)
+) 
+{
+GROUP1.DUMMY001.ELE001 = (
+<VIEW
+ONLAYOUT = 
+{
+(EVENT1) => {
+OB.LAY['015'] = undefined
+.SET001 (GROUP1.DUMMY001.L['001'], EVENT1.NATIVEEVENT.L)
+&& 
+(PROP1.INDEX1 
+== DUM.INDEX['001'] && -1 
+== DUM.INDEX['002']) 
+{
+DUM.INDEX['001'] = -1
+.SCROLL001 (PROP1.INDEX1)
+}
+}
+}
+REF = 
+{
+.REF['015']
+}
+STYLE = 
+{
+{
+WIDTH: "100%",
+}
+}
+>
+<VIEW
+STYLE = 
+{
+{
+ALIGNITEMS: "CENTER",
+BORDERBOTTOMCOLOR: "RGBA (245, 245, 245, 1)",
+BORDERBOTTOMWI: 1,
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "SPACE-BETWEEN",
+PADDINGLEFT: 8,
+PADDINGRIGHT: 8,
+PADDINGVERTICAL: 10,
+WIDTH: "100%",
+}
+}
+>
+<TEXT
+STYLE = 
+{
+{
+FONTSIZE: 14,
+FONTWEIGHT: "300",
+}
+}
+>
+{ 
+GROUP1.STR['001'] 
+}
+</TEXT>
+<VIEW
+STYLE = 
+{ 
+{
+ALIGNITEMS: "CENTER",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "FLEX-START",
+}
+}
+>
+<PRESSABLE
+ONPRESS = 
+{
+(EVENT1) => {
+} 
+}
+STYLE = 
+{
+STYLES1.OBJ2 
+}
+>
+<FONTAWESOMEIKON 
+COLOR = 
+{ 
+STYLES1.OBJ23A3.COLOR 
+} 
+IKON = 
+{ 
+FAMINUS 
+}
+SIZE = 
+{ 
+16 
+}
+>
+</FONTAWESOMEIKON>
+</PRESSABLE>
+<PRESSABLE
+ONPRESS = 
+{ 
+(EVENT1) => {
+} 
+}
+STYLE = 
+{ 
+STYLES1.OBJ2 
+}
+>
+<FONTAWESOMEIKON 
+COLOR = 
+{ 
+STYLES1.OBJ23A3.COLOR 
+} 
+IKON = 
+{ 
+FAELLIPSISSTROKEVERTICAL 
+}
+SIZE = 
+{ 
+16 
+}
+>
+</FONTAWESOMEIKON>
+</PRESSABLE>
+</VIEW>
+</VIEW>
+<COMPONENT16
+INDEX1 = 
+{ 
+PROP1.INDEX1 
+}
+>
+</COMPONENT16>
+</VIEW>
+)
+}
+return GROUP1.DUMMY001.ELE001
+}
+function COMPONENT16 (PROP1: {
+INDEX1: number
+}) 
+{
+.REF['016'] = undefined
+.['016'] = undefined
+var GROUP1 = OB001.INS002.GET1 (PROP1.INDEX1)
+GROUP1.DUMMY001.['003'] = .USE001 ()
+&& 
+(
+(PROP1.INDEX1 
+== DUM.INDEX['001']) 
+|| 
+(
+undefined 
+== GROUP1.DUMMY001.ELE002)
+) 
+{
+GROUP1.DUMMY001.ELE002 = (
+<VIEW
+STYLE = 
+{
+{
+WIDTH: "100%",
+}
+}
+>
+{
+GROUP1.LAYERRS1.map ((LAYERR1, INDEX2) => {
+return (
+<COMPONENT17
+INDEX1 = 
+{ 
+PROP1.INDEX1 
+}
+INDEX2 = 
+{ 
+INDEX2 
+}
+KEY = 
+{ 
+LAYERR1.ID001 
+}
+>
+</COMPONENT17>
+)
+})
+}
+</VIEW>
+)
+}
+return GROUP1.DUMMY001.ELE002
+}
+function COMPONENT17 (PROP1: {
+INDEX1: number
+INDEX2: number
+}) 
+{
+.['017'] = undefined
+var GROUP1 = OB001.INS002.GET1 (PROP1.INDEX1)
+var LAYERR1 = OB001.INS002.GET2 (PROP1.INDEX1, PROP1.INDEX2)
+LAYERR1.DUMMY001.['001'] = .USE001 ()
+&& 
+(
+(
+(
+PROP1.INDEX1 
+== 
+DUM.INDEX['012']) 
+&& 
+(
+PROP1.INDEX2 
+== 
+DUM.INDEX['013'])
+) 
+|| 
+(!LAYERR1.DUMMY001.ELE001)
+) 
+{
+LAYERR1.DUMMY001.ELE001 = (
+<VIEW
+STYLE = 
+{
+{
+WIDTH: "100%",
+HEIGHT: .HE003,
+BORDERBOTTOMWI: 1,
+BORDERCOLOR: "RGBA (245, 245, 245, 1)",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+}
+}
+ONLAYOUT = 
+{
+(EVENT1) => {
+.SET001 (LAYERR1.DUMMY001.L['001'], EVENT1.NATIVEEVENT.L)
+&& 
+((PROP1.INDEX1 
+== DUM.INDEX['012']) && (PROP1.INDEX2 
+== DUM.INDEX['013'])) 
+{
+DUM.INDEX['012'] = -1
+DUM.INDEX['013'] = -1
+.SCROLL002 (PROP1.INDEX1, PROP1.INDEX2)
+}
+}
+}
+>
+<COMPONENT18
+INDEX1 = 
+{ PROP1.INDEX1 }
+INDEX2 = 
+{ PROP1.INDEX2 }
+>
+<COMPONENT21 
+INDEX1 = 
+{ PROP1.INDEX1 }
+INDEX2 = 
+{ PROP1.INDEX2 }
+>
+</COMPONENT21>
+</COMPONENT18>
+<VIEW
+STYLE = 
+{ 
+{
+DISPLAY: "FLEX",
+FLEXDIRECTION: "COLUMN",
+JUSTIFYCONTENT: "FLEX-START",
+ALIGNITEMS: "FLEX-START",
+} 
+}
+>
+<PRESSABLE
+STYLE = 
+{ STYLES1.OBJ3 }
+ONPRESS = 
+{ (O) => {} }
+>
+<ICON.KEYBOARDARROWDOWN>
+
+</ICON.KEYBOARDARROWDOWN>
+</PRESSABLE>
+</VIEW>
+</VIEW>
+)
+}
+return LAYERR1.DUMMY001.ELE001
+}
+function COMPONENT18 
+(
+PROP1: 
+{
+INDEX1: number
+INDEX2: number
+?
+},
+) 
+{
+.REF['018'] = undefined
+.['018'] = undefined
+var GROUP1 = OB001.INS002.GET1 
+(
+PROP1.INDEX1,
+)
+var LAYERR1 = OB001.INS002.GET2 
+(
+PROP1.INDEX1, 
+PROP1.INDEX2,
+)
+LAYERR1.DUMMY001.20 = .USE001 
+(
+)
+&&
+(
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['014']
+) &&
+(
+PROP1.INDEX2 
+== DUM.INDEX['015']
+)
+) 
+||
+(
+(
+undefined 
+== .ELE020
+) &&
+(
+undefined 
+== LAYERR1.DUMMY001.ELE020
+)
+)
+)
+)
+{
+.ELE020 = undefined
+LAYERR1.DUMMY001.ELE020 = 
+(
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1,
+) => 
+{
+OB.LAY['020'] = undefined
+.SET001
+(
+LAYERR1.DUMMY001.L['020'],
+EVENT1.NATIVEEVENT.L,
+)
+&& 
+(
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['014']
+) &&
+(
+PROP1.INDEX2 
+== DUM.INDEX['015']
+)
+)
+)
+) 
+{
+DUM.INDEX['014'] = -1
+DUM.INDEX['015'] = -1
+}
+}
+}
+ONTOUCHEND = 
+{
+ASYNC (
+EVENT1,
+) => 
+{
+&& 
+(
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['014']
+) && 
+(
+PROP1.INDEX2 
+== DUM.INDEX['015']
+)
+)
+)
+) 
+{
+// BEFORE
+var GROUP1 = OB001.INS002.GET1 
+(
+DUM.INDEX['021'],
+)
+var LAYERR1 = OB001.INS002.GET2 
+(
+DUM.INDEX['021'], 
+DUM.INDEX['022'],
+)
+await OB001.INS002.LOAD1 
+(
+DUM.INDEX['021'], 
+DUM.INDEX['022'], 
+LAYERR1.OP['001'].INDEX1,
+)
+// CURRENT
+DUM.INDEX['021'] = PROP1.INDEX1
+DUM.INDEX['022'] = PROP1.INDEX2
+var GROUP2 = OB001.INS002.GET1 
+(
+DUM.INDEX['021'],
+)
+var LAYERR2 = OB001.INS002.GET2 
+(
+DUM.INDEX['021'], 
+DUM.INDEX['022'],
+)
+await OB001.INS002.LOAD1 
+(
+DUM.INDEX['021'], 
+DUM.INDEX['022'], 
+LAYERR2.OP['001'].INDEX1,
+)
+.['002'] 
+(
+)
+LAYERR1.DUMMY001.['001'] 
+(
+)
+LAYERR2.DUMMY001.['001'] 
+(
+)
+}
+}
+}
+STYLE = 
+{
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['014']
+) &&
+(
+PROP1.INDEX2 
+== DUM.INDEX['015']
+)
+)
+) ?
+STYLESHEET.COMPONENTOSE 
+(
+STYLES1.OBJ20A1,
+{
+BACKGROUNDCOLOR: "RGBA (242, 242, 242, 1)",
+},
+) :
+STYLES1.OBJ20A1
+}
+>
+{
+(
+PROP1
+) 
+}
+</VIEW>
+)
+}
+return LAYERR1.DUMMY001.ELE020
+}
+function COMPONENT21 
+(
+PROP1: 
+{
+INDEX1: number
+INDEX2: number
+},
+)
+{
+.REF['021'] = undefined
+.['021'] = undefined
+var GROUP1 = OB001.INS002.GET1 
+(
+PROP1.INDEX1,
+)
+var LAYERR1 = OB001.INS002.GET2 
+(
+PROP1.INDEX1, 
+PROP1.INDEX2,
+)
+LAYERR1.DUMMY001.['021'] = .USE001 
+(
+)
+&& 
+(
+(
+(
+(
+undefined 
+== .ELE021
+) &&
+(
+undefined 
+== LAYERR1.DUMMY001.ELE021
+)
+)
+)
+)
+{
+LAYERR1.DUMMY001.ELE021 = 
+(
+<SCROLLVIEW
+CONTENTCONTAINERSTYLE = 
+{ 
+{
+}
+}
+HORIZONTAL = 
+{ 
+true
+}
+ONLAYOUT = 
+{
+(
+EVENT1,
+) => 
+{
+OB.LAY['021'] = undefined
+.SET001 
+(
+LAYERR1.DUMMY001.L['021'],
+EVENT1.NATIVEEVENT.L,
+)
+}
+}
+REF = 
+{
+.REF['021']
+}
+SHOWSHORIZONTALSCROLLINDICATOR = 
+{ 
+false
+}
+STYLE = 
+{
+{
+HEIGHT: "100%",
+}
+}
+>
+<VIEW
+STYLE = 
+{
+{
+ALIGNITEMS: "CENTER",
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+JUSTIFYCONTENT: "FLEX-START",
+}
+}
+>
+<COMPONENT22
+INDEX1 = 
+{ 
+PROP1.INDEX1 
+}
+INDEX2 = 
+{ 
+PROP1.INDEX2 
+}
+INDEX3 = 
+{ 
+LAYERR1.OP['001'].INDEX1 
+}
+>
+</COMPONENT22>
+</VIEW>
+</SCROLLVIEW>
+)
+}
+return LAYERR1.DUMMY001.ELE021
+}
+function COMPONENT22 
+(
+PROP1: 
+{
+INDEX1: number
+INDEX2: number
+INDEX3: number
+},
+)
+{
+.REF['022'] = undefined
+.['022'] = undefined
+var GROUP1 = OB001.INS002.GET1 
+(
+PROP1.INDEX1,
+)
+var LAYERR1 = OB001.INS002.GET2 
+(
+PROP1.INDEX1,
+PROP1.INDEX2,
+)
+LAYERR1.DUMMY001.REF22 = USEREF 
+(
+)
+LAYERR1.DUMMY001.['022'] = .USE001 
+(
+)
+USEEFFECT 
+(
+(
+) => 
+{
+;
+(
+ASYNC (
+) => 
+{
+await OB001.INS002.LOAD1 
+(
+PROP1.INDEX1,
+PROP1.INDEX2, 
+PROP1.INDEX3,
+)
+LAYERR1.DUMMY001.['022'] 
+(
+)
+}
+)
+(
+)
+},
+[
+PROP1.INDEX3,
+],
+)
+&&
+(
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['001']
+) && 
+(
+PROP1.INDEX2 
+== DUM.INDEX['002']
+) && 
+(
+PROP1.INDEX3 
+== DUM.INDEX['003']
+)
+) 
+||
+(
+(
+undefined 
+== .ELE022
+) &&
+(
+undefined 
+== LAYERR1.DUMMY001.ELE022
+)
+)
+)
+) 
+{
+.ELE022 = undefined
+LAYERR1.DUMMY001.ELE022 = 
+(
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1,
+) => {
+&& 
+(
+(
+(
+(
+PROP1.INDEX1 
+== DUM.INDEX['001']
+) && 
+(
+PROP1.INDEX2 
+== DUM.INDEX['002']
+) && 
+(
+PROP1.INDEX3 
+== DUM.INDEX['003']
+)
+)
+)
+)
+{
+OB.LAY['022'] = undefined
+.SET001 
+(
+LAYERR1.DUMMY001.L['022'], 
+EVENT1.NATIVEEVENT.L,
+)
+DUM.INDEX['001'] = -1
+DUM.INDEX['002'] = -1
+DUM.INDEX['003'] = -1
+}
+}
+}
+REF = 
+{
+LAYERR1.DUMMY001.REF22
+}
+STYLE = 
+{ 
+{
+ALIGNITEMS: "CENTER",
+BACKGROUNDCOLOR: "RGBA (255, 255, 255, 1)",
+BORDERCOLOR: "RGBA (230, 230, 230, 1)",
+BORDERWI: 1,
+DISPLAY: "FLEX",
+FLEXDIRECTION: "ROW",
+HEIGHT: "100%",
+JUSTIFYCONTENT: "CENTER",
+WIDTH: 80,
+}
+}
+>
+{
+(
+(
+(
+undefined 
+== LAYERR1.DUMMY001.HISTORY1.IMAGE1.FILE1.CONTENT1
+)
+)
+) &&
+(
+<IMAGE1
+SOURCE = 
+{
+{
+URI: LAYERR1.DUMMY001.HISTORY1.IMAGE1.FILE1.CONTENT1, 
+}
+}
+STYLE = 
+{ 
+{
+ASPECTREITIO: 1,
+HEIGHT: "100%",
+} 
+}
+RESIZEMODE="CONTAIN"
+>
+</IMAGE1>
+)
+}
+</VIEW>
+)
+}
+return LAYERR1.DUMMY001.ELE022
+}
+function COMPONENT23 
+(
+PROP1: 
+{ 
+},
+)
+{
+.REF['023'] = USEREF 
+(
+)
+.['023'] = .USE001 
+(
+)
+&& 
+(
+(
+(
+(
+undefined 
+== .ELE023
+)
+)
+)
+)
+{
+.ELE023 = 
+(
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1,
+) => 
+{
+.SET001 
+(
+OB.LAY['023'], 
+EVENT1.NATIVEEVENT.L,
+)
+}
+}
+REF = 
+{
+.REF['023']
+}
+STYLE = 
+{
+STYLES1.OBJ23A1 
+}
+>
+<PRESSABLE
+STYLE = 
+{
+STYLES1.OBJ23A2 
+}
+>
+<FONTAWESOMEIKON 
+COLOR = 
+{ 
+STYLES1.OBJ23A3.COLOR 
+} 
+IKON = 
+{ 
+FASQUARADDASHADDCIRCLEPLUS 
+}
+SIZE = 
+{ 
+34 
+} 
+>
+</FONTAWESOMEIKON>
+</PRESSABLE>
+</VIEW>
+)
+}
+return .ELE023
+}
+function COMPONENT24 
+(
+PROP1: 
+{
+
+}
+) 
+{
+REF
+[
+'024'
+] 
+= 
+USEREF 
+(
+
+)
+
+[
+'024'
+] 
+= 
+USE001 
+(
+
+)
+// PAINTBRUSH-PENCIL
+// UTILS (PEN SIZE, BRUSH, PENCIL, )
+&& 
+(
+(
+(
+(
+undefined 
+== .ELE024
+)
+)
+)
+) 
+{
+.ELE024 = 
+(
+<VIEW
+ONLAYOUT = 
+{
+(
+EVENT1,
+) => 
+{
+.SET001 
+(
+OB.LAY['024'], 
+EVENT1.NATIVEEVENT.L,
+)
+}
+}
+REF = 
+{
+.REF['024']
+}
+STYLE = 
+{ 
+STYLES1.OBJ024A01
+}
+>
+<PRESSABLE
+ONPRESS = 
+{ 
+(
+EVENT1,
+) => 
+{
+// MAGIC1: UP-SPEADD1 -> UP-BRUSH_SIZE1
+}
+}
+STYLE = 
+{
+STYLES1.OBJ024A02 
+}
+>
+<FONTAWESOMEIKON 
+SIZE = 
+{ 
+34 
+}
+COLOR = 
+{ 
+STYLES1.OBJ024A03.COLOR 
+}
+IKON = 
+{
+FASQUARADDASHADDCIRCLEPLUS 
+}
+>
+</FONTAWESOMEIKON>
+</PRESSABLE>
+<PRESSABLE
+STYLE = 
+{ 
+STYLES1
+.
+OBJ024A02 
+}
+ONPRESS 
+= 
+{
+(
+EVENT1
+,
+) => 
+{
+// MAGIC1: UP-SPEADD1 -> DOWN-BRUSH_SIZE1
+}
+}
+>
+<FONTAWESOMEIKON 
+COLOR = 
+{ 
+STYLES1.OBJ024A03.COLOR 
+}
+IKON = 
+{ 
+FASQUARADDASHADDCIRCLEPLUS 
+}
+SIZE 
+= 
+{ 
+34 
+}
+>
+</FONTAWESOMEIKON>
+</PRESSABLE>
+</VIEW>
+)  
+}
+return 
+
+.
+ELE024
+}
+function 
+COMPONENT025 
+(
+PA1
+: 
+{
+
+}
+)
+{
+<VIEW
+ONLAYOUT 
+= 
+{
+(
+EVENT1
+,
+) 
+=> 
+{
+
+.
+SET001 
+(
+
+.
+L['025']
+, 
+EVENT1
+.
+NATIVEEVENT
+.
+L
+,
+)
+}
+}
+REF 
+= 
+{
+
+.
+REF['025']
+}
+>
+</VIEW>
+)
+}
+return 
+
+.
+ELE025
+}
